@@ -1,8 +1,8 @@
-import { APP_CONFIG } from './app.config';
-import { init } from './core/init-page';
-import { circle } from './pages/circle';
+import Vue from "vue";
+import App from "./App.vue";
 
-window.onload = () => {
-  (window as any).APP_CONFIG = APP_CONFIG;
-  init(circle);
-};
+Vue.config.productionTip = false;
+
+new Vue({
+  render: h => h(App)
+}).$mount("#app");

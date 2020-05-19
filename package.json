@@ -1,42 +1,32 @@
 {
-  "name": "mix-gl",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "mix-vue",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "dev": "webpack-dev-server --client-log-level none --color --inline --hot --config config/webpack.dev.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/guobin211/mix-gl.git"
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.1"
   },
-  "keywords": [
-    "canvas",
-    "three.js",
-    "webgl"
-  ],
-  "author": "guobin211",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/guobin211/mix-gl/issues"
-  },
-  "homepage": "https://github.com/guobin211/mix-gl#readme",
-  "dependencies": {},
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-loader": "^8.1.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "html-webpack-plugin": "^4.3.0",
-    "ts-loader": "^7.0.4",
-    "typescript": "^3.9.2",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2"
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-plugin-eslint": "~4.3.0",
+    "@vue/cli-plugin-typescript": "~4.3.0",
+    "@vue/cli-service": "~4.3.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^1.19.1",
+    "typescript": "~3.8.3",
+    "vue-template-compiler": "^2.6.11"
   }
 }
