@@ -1,36 +1,59 @@
-class HomePage {
+import { CanvasPage } from '../core/init-page';
+import { renderLine, renderLayoutLine } from './line';
+
+export interface Point {
+  x: number;
+  y: number;
+}
+export interface Layout {
+  start: Point,
+  end: Point
+};
+
+class HomePage implements CanvasPage {
 
   private warp: HTMLDivElement;
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
+  private layout: Layout;
+  private dpr: number;
 
   constructor() {
     this.warp = document.getElementById('app') as any;
     this.canvas = document.getElementById('canvas') as any;
     this.initCanvas();
+    this.initStore();
   }
 
   private initCanvas() {
     if (!this.canvas) {
       return;
     }
+    // setup
+    this.dpr = window.devicePixelRatio || 1;
+    const rect = this.canvas.getBoundingClientRect();
+    this.canvas.width = rect.width * this.dpr;
+    this.canvas.height = rect.height * this.dpr;
     this.ctx = this.canvas.getContext('2d', {});
-    const ctx = this.ctx;
-    ctx.lineWidth = 10;
+    this.ctx.scale(this.dpr, this.dpr);
+  }
 
-    // Wall
-    ctx.strokeRect(75, 140, 150, 110);
+  private initStore() {
+    const left = this.canvas.offsetLeft;
+    const top = this.canvas.offsetTop;
+    const start = {
+      x: left,
+      y: top
+    }
+    const end = {
+      x: left + this.canvas.clientWidth,
+      y: top + this.canvas.clientHeight
+    }
+    this.layout = { start, end }
+  }
 
-    // Door
-    ctx.fillRect(130, 190, 40, 60);
-
-    // Roof
-    ctx.beginPath();
-    ctx.moveTo(50, 140);
-    ctx.lineTo(150, 60);
-    ctx.lineTo(250, 140);
-    ctx.closePath();
-    ctx.stroke();
+  render() {
+    renderLayoutLine(this.ctx, this.layout);
   }
 
 }
