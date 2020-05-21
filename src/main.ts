@@ -1,8 +1,9 @@
 import { APP_CONFIG } from './app.config';
 import { init } from './core/init-page';
-import { circle } from './pages/circle';
+import { HOME } from './pages/home';
 
 window.onload = () => {
   (window as any).APP_CONFIG = APP_CONFIG;
-  init(circle);
+  console.log(HOME);
+  init(HOME);
 };
