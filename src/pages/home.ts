@@ -1,5 +1,7 @@
 import { CanvasPage } from '../core/init-page';
 import { renderLine, renderLayoutLine } from './line';
+import { drawRect } from './rect';
+import { loopVR } from './loop-vr';
 
 export interface Point {
   x: number;
@@ -53,7 +55,8 @@ class HomePage implements CanvasPage {
   }
 
   render() {
-    renderLayoutLine(this.ctx, this.layout);
+    // renderLayoutLine(this.ctx, this.layout);
+    loopVR(this.ctx);
   }
 
 }
