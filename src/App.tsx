@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react'
+import CoordinateSystem from './components/CoordinateSystem'
 
 function App() {
+
+  const [size] = useState({width: 500, height: 400})
+
   return (
     <div className='App'>
-      <canvas id='canvas'></canvas>
+      <CoordinateSystem size={size}/>
     </div>
   );
 }
