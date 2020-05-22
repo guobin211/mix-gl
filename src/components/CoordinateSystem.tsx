@@ -1,27 +1,11 @@
 import React, { createRef } from 'react'
-import { renderLine } from './utils'
-
-export interface CanvasRef {
-  current: HTMLCanvasElement
-}
-
-export interface CanvasSize {
-  width: number;
-  height: number;
-}
-
-export interface CanvasGrid {
-  left?: number;
-  top?: number;
-  right?: number;
-  bottom?: number;
-  show?: boolean;
-  backgroundColor?: string;
-}
+import { renderLine } from './renderManage'
+import { CanvasSize, CanvasRef, CanvasGrid } from './defin'
 
 export interface CoordinateSystemProps {
   size?: CanvasSize
   grid?: CanvasGrid
+  [key: string]: any
 }
 
 export interface CoordinateSystemState {
@@ -77,7 +61,11 @@ export default class CoordinateSystem extends React.Component<CoordinateSystemPr
   constructor(props: CoordinateSystemProps) {
     super(props)
     this.canvasRef = createRef() as any
-    Object.assign(this.size, props.size)
+    for (const prop in props) {
+      if (props.hasOwnProperty(prop)) {
+        Object.assign((this as any)[prop], props[prop])
+      }
+    }
   }
 
   componentDidMount() {
@@ -86,7 +74,7 @@ export default class CoordinateSystem extends React.Component<CoordinateSystemPr
 
   render() {
     return (
-        <canvas ref={this.canvasRef} width={this.size.width} height={this.size.height}/>
+      <canvas ref={this.canvasRef} width={this.size.width} height={this.size.height} />
     )
   }
 }
