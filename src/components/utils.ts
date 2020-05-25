@@ -41,7 +41,6 @@ function getNumberOfRGB(rgb: string): number[] {
       res.push(s)
     }
   }
-  console.log(res);
 
   return res.map(s => Number(s))
 }

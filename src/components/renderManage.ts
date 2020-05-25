@@ -13,8 +13,9 @@ export function renderLine(size: CanvasSize, c: CanvasRenderingContext2D, g: Can
   c.strokeStyle = Config.STROKE_STYLE
   const secendColor = 'rgb(222,222,222)'
   let first = true
-  const xEnd = getEndpoint(size.width - Config.THIN_LINE - (g.left || 0) - (g.right || 0), Config.OFFSET_WIDTH)
+  const xEnd = getEndpoint(size.width - Config.THIN_LINE - (g.left || 0), Config.OFFSET_WIDTH)
   const yEnd = getEndpoint(size.height - Config.THIN_LINE - (g.bottom || 0) - (g.top || 0), Config.OFFSET_WIDTH)
+  console.log(xEnd);
   // 纵向
   for (let i = g.left || 0; i < size.width - (g.left || 0) - (g.right || 0); i += Config.OFFSET_WIDTH) {
     c.beginPath()
@@ -42,7 +43,7 @@ export function renderLine(size: CanvasSize, c: CanvasRenderingContext2D, g: Can
       c.lineTo(size.width - (g.right || 0), i + Config.THIN_LINE)
       first = false
     } else {
-      c.lineTo(xEnd + (g.left || 0), i + Config.THIN_LINE)
+      c.lineTo(xEnd, i + Config.THIN_LINE)
     }
     c.stroke()
     c.closePath()

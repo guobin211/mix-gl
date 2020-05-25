@@ -10,11 +10,11 @@ export const Config = {
   /**
    * 间隔
    */
-  OFFSET_WIDTH: 40,
+  OFFSET_WIDTH: 50,
   /**
    * 细线
    */
-  THIN_LINE: 0.4,
+  THIN_LINE: 0.5,
   /**
    * 字号
    */
