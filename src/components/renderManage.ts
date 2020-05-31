@@ -4,7 +4,7 @@ import { CanvasSize, CanvasGrid } from './defin'
 /**
  * 绘制线条
  * @param size canvas size
- * @param c canvas contxt
+ * @param c canvas context
  * @param g grid
  */
 export function renderLine(size: CanvasSize, c: CanvasRenderingContext2D, g: CanvasGrid) {
