@@ -22,7 +22,7 @@
 ```
 #### 预览
 <div align="center">
-    <img src="https://github.com/guobin211/mix-gl/blob/react/config/bg.png" width = "200" height = "200"  alt=""/>
+    <img src="https://github.com/guobin211/mix-gl/blob/react/config/bg.png" width = "600" height = "600"  alt=""/>
 </div>
 
 
