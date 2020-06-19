@@ -1,15 +1,35 @@
-# mix-gl
+# Canvas 绘制网格线
 
-> a project of webgl
+```typescript
+  private _ctx?: CanvasRenderingContext2D
 
-## preview
+  size: CanvasSize = {
+    width: 300,
+    height: 300
+  }
 
-预览
+  grid: CanvasGrid = {
+    left: 30,
+    right: 30,
+    top: 40,
+    bottom: 60
+  }
 
-## use
+  componentDidMount() {
+    renderLine(this.size, this.ctx, this.grid)
+  }
 
 ```
-  npm install
+#### 预览
+[![Image ](https://github.com/guobin211/mix-gl/blob/react/config/bg.png)](https://github.com/guobin211/mix-gl)
 
-  npm run start
+## Scripts
+
+```shell script
+
+    yarn install
+    
+    yarn satrt
+
 ```
+
