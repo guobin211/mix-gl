@@ -21,7 +21,10 @@
 
 ```
 #### 预览
-[![Image ](https://github.com/guobin211/mix-gl/blob/react/config/bg.png)](https://github.com/guobin211/mix-gl)
+<div align="center">
+    <img src="https://github.com/guobin211/mix-gl/blob/react/config/bg.png" width = "200" height = "200"  alt=""/>
+</div>
+
 
 ## Scripts
 
